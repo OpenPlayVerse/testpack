@@ -1,5 +1,0 @@
-hash-format = "sha256"
-
-[[files]]
-file = "README.md"
-hash = "424bc8f1a8e3b910f977ce535a07a3ff85d41807d03d16e11ba7cfaa15e9efc0"

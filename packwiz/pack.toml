@@ -1,0 +1,12 @@
+name = "testpack"
+version = "0.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "524eb1322a7e75eccc18f527580a239ac3ac9e79af54ba2e9ca939758975adc6"
+
+[versions]
+forge = "38.0.0"
+minecraft = "1.18.2"

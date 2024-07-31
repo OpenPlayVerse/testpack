@@ -1,0 +1,16 @@
+hash-format = "sha256"
+
+[[files]]
+file = "mods/create.pw.toml"
+hash = "8cd6e0ba62f3f5962a824170bbf52fd502cbfec5b861fb24757e8283dd351fd1"
+metafile = true
+
+[[files]]
+file = "mods/jei.pw.toml"
+hash = "2c0416f828fc81937832d22a2fe68b46badaa81f8193f0e2c53735bc28a017f7"
+metafile = true
+
+[[files]]
+file = "mods/worldedit.pw.toml"
+hash = "9cba8becd46d571b7576be0d34fea48a7c38f5745265186c7baf1c79251ef373"
+metafile = true

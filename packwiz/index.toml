@@ -6,6 +6,11 @@ hash = "8cd6e0ba62f3f5962a824170bbf52fd502cbfec5b861fb24757e8283dd351fd1"
 metafile = true
 
 [[files]]
+file = "mods/natures-compass.pw.toml"
+hash = "a08c324ef885cd85a34ccaf5a97d6c06eea129fed35e9544b5b169a4e51c7417"
+metafile = true
+
+[[files]]
 file = "mods/worldedit.pw.toml"
 hash = "b4d1af03603eba0a2fe8e9db1b0807154bbc16bf669dd084b7c96dded90cf213"
 metafile = true

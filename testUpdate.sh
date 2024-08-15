@@ -19,7 +19,7 @@ error() {
 trap "error" ERR
 
 ### update ###
-echo "### Create packwiz aliases ###"
+echo "\n### Create packwiz aliases ###"
 ./tools/createPackwizAliases.sh \
 	--pack-url $packURL \
 	--input "files" \
@@ -32,12 +32,12 @@ cd packwiz
 packwiz refresh
 cd ..
 
-echo "### push to git ###"
+echo "\n### push to git ###"
 git add .
 git commit -m "TEST"
 git push
 
-echo "### Update server ###"
+echo "\n### Update server ###"
 ./tools/updateServer.sh \
    --server-id $serverID \
    --pterodactyl-url $pterodactylURL \

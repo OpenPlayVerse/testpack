@@ -1,12 +1,49 @@
 #!/bin/bash
 
+### conf ###
+serverID="40d42383"
+pterodactylURL="https://panel.openplayverse.net"
+packURL="https://github.com/OpenPlayVerse/testpack/raw/main/"
+apiTokenPath="/home/noname/.mmmtk/api.token"
+sshKeyPath="~/.ssh/nnh-g-50_test-nopasswd"
+sshTarget="test@192.168.4.150"
+sshArgs=""
+updateScriptArgs="-S"
+
+### init ###
+set -e
+error() {
+	echo "ERROR: something went wrong. abandon update." 
+	exit 1
+}
+trap "error" ERR
+
+### update ###
+echo "### Create packwiz aliases ###"
+./tools/createPackwizAliases.sh \
+	--pack-url $packURL \
+	--input "files" \
+	--output "./packwiz" \
+	--list-file ".collectedFiles" \
+	-R
+
+echo "packwiz refresh"
+cd packwiz
+packwiz refresh
+cd ..
+
+echo "### push to git ###"
+git add .
+git commit -m "TEST"
+git push
+
+echo "### Update server ###"
 ./tools/updateServer.sh \
-	--server-id 95b6cd22 \
-	--pterodactyl-url https://panel.openplayverse.net \
-	--pack-url https://raw.githubusercontent.com/OpenPlayVerse/testpack/main/packwiz/pack.toml \
-	--token ~/.mmmtk/api.token \
-	--ssh-args="-i ~/.ssh/nnh-g-50_test-nopasswd test@192.168.4.150" \
-	-m 1 -s 30 \
-	--update-script-args="-S" \
-	$*
-	
+   --server-id $serverID \
+   --pterodactyl-url $pterodactylURL \
+   --pack-url "${packURL}/packwiz/pack.toml" \
+   --token $apiTokenPath \
+   --ssh-args="-i $sshKeyPath $sshTarget $sshArgs" \
+   --update-script-args="$updateScriptArgs" \
+	--no-backup \
+   $*

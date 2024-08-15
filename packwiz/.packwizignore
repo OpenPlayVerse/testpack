@@ -1,0 +1,9 @@
+*.token
+secret/
+testServer/
+
+client/
+server/
+tools/
+test/
+release/

@@ -41,7 +41,7 @@ echo $currentGitBlob
 echo
 echo "### Create packwiz aliases ###"
 ./tools/createPackwizAliases.sh \
-	--pack-url ${packURL}/${branch} \
+	--pack-url ${packURL}/${currentGitBlob} \
 	--input "files" \
 	--output "./packwiz" \
 	--list-file ".collectedFiles" \

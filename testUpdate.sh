@@ -32,6 +32,13 @@ currentGitBlob=""
 
 ### update ###
 echo
+echo "### push prep to git ###"
+git add .
+git commit -m "v${packVersion}_prep"
+git push
+currentGitBlob=$(git rev-parse HEAD)
+
+echo
 echo "### Create packwiz aliases ###"
 ./tools/createPackwizAliases.sh \
 	--pack-url ${packURL}/${currentGitBlob} \
@@ -46,13 +53,10 @@ packwiz refresh
 cd ..
 
 echo
-echo "### push to git ###"
+echo "### push final to git ###"
 git add .
-git commit -m "v$packVersion"
+git commit -m "v${packVersion}"
 git push
-currentGitBlob=$(git rev-parse HEAD)
-
-echo $currentGitBlob
 
 ### create multimc releases ###
 mkdir $tmpReleaseFileLocation

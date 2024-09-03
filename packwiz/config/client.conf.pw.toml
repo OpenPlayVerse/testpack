@@ -5,5 +5,5 @@ side = "client"
 [download]
 url = "https://github.com/OpenPlayVerse/testpack/raw//main/files/client/config/client.conf"
 hash-format = "sha1"
-hash = "f42d6ce7a20d18fd6c5001cc63219828a145a7a1"
+hash = "5c991ff71744af8b792fe541a832b74bcb509d5e"
 					

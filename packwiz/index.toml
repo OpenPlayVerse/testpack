@@ -7,7 +7,7 @@ metafile = true
 
 [[files]]
 file = "config/client.conf.pw.toml"
-hash = "dac21a49972585baca34cf660629ba1838f824def879340e20b27ce8cd99dc54"
+hash = "c2fa975a4507c1620b8ffa1b833fdbe0e0763fbadc2e0dddfde79db5237dd216"
 metafile = true
 
 [[files]]

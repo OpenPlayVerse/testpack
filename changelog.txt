@@ -1,4 +1,4 @@
-10.0.6
+10.0.7
 
 some updates
 some more updates

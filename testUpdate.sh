@@ -28,14 +28,7 @@ trap "error" ERR
 workingDir=$(pwd)
 packVersion=$(head -n 1 changelog.txt)
 changelog=$(< changelog.txt)
-currentGitBlob=$(git rev-parse HEAD)
-
-echo $workingDir
-echo $packVersion
-echo $changelog
-echo $currentGitBlob
-
-
+currentGitBlob=""
 
 ### update ###
 echo
@@ -55,9 +48,9 @@ cd ..
 echo
 echo "### push to git ###"
 git add .
-git commit -m "TEST"
+git commit -m "v$packVersion"
 git push
-
+currentGitBlob=$(git rev-parse HEAD)
 
 ### create multimc releases ###
 mkdir $tmpReleaseFileLocation

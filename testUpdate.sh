@@ -57,6 +57,7 @@ echo "### push final to git ###"
 git add .
 git commit -m "v${packVersion}"
 git push
+currentGitBlob=$(git rev-parse HEAD)
 
 ### create multimc releases ###
 mkdir $tmpReleaseFileLocation
@@ -71,8 +72,6 @@ cd ${tmpReleaseFileLocation}/${packName}_$packVersion
 echo PreLaunchCommand="\$INST_JAVA" -jar packwiz-installer-bootstrap.jar -s client ${packURL}/${currentGitBlob}/packwiz/pack.toml >> instance.cfg
 cd $workingDir
 
-: '
-
 ./tools/createGithubRelease.sh \
 	--upstream "${packAPIURL}/releases" \
 	--tag "$packVersion" \
@@ -86,7 +85,6 @@ cd $workingDir
 
 rm -r ${tmpReleaseFileLocation}
 
-'
 
 : '
 echo

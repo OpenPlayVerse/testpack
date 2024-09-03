@@ -3,7 +3,7 @@ filename = "client.conf"
 side = "client"
 
 [download]
-url = "https://github.com/OpenPlayVerse/testpack/raw//c071facba0f3f1306ee24d96d43b15a3cd8cd4aa/files/client/config/client.conf"
+url = "https://github.com/OpenPlayVerse/testpack/raw//3b3fdb7adf8031b7b6ab6b897811eb8736629a74/files/client/config/client.conf"
 hash-format = "sha1"
-hash = "5c991ff71744af8b792fe541a832b74bcb509d5e"
+hash = "42d82580e383b537e39a4d5c9b7b7cb96bc28f50"
 					

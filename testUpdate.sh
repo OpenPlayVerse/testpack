@@ -77,7 +77,7 @@ cd ${tmpReleaseFileLocation}/${packName}_$packVersion
 echo PreLaunchCommand="\$INST_JAVA" -jar packwiz-installer-bootstrap.jar -s client ${packURL}/${mainGitBlob}/packwiz/pack.toml >> instance.cfg
 cd $workingDir
 
-: '
+
 ./tools/createGithubRelease.sh \
 	--upstream "${packAPIURL}/releases" \
 	--tag "$packVersion" \
@@ -87,25 +87,18 @@ cd $workingDir
 	--token "$githubTokenPath" \
 	--release-folder "${tmpReleaseFileLocation}" \
 	--release-files-only
-'
+
 rm -r ${tmpReleaseFileLocation}
 
-echo $versionPrepID
-echo $versionID
 
 wait() {
-	echo sleep
-	wget -qO- $2
 	while [[ $(wget -qO- $2) != $3 ]]; do	
-		wget -qO- $2
 		echo $1
 		sleep 30
 	done
 }
 wait "Prep repository not updated yet. Wait another 30 seconds" ${packURL}/${prepGitBlob}/.versionID $versionPrepID
 wait "Main repository not updated yet. Wait another 30 seconds" ${packURL}/${branch}/.versionID $versionID
-
-echo TEST DONE
 
 : '
 echo

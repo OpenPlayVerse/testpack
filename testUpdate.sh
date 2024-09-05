@@ -89,9 +89,8 @@ cd $workingDir
 	--release-folder "${tmpReleaseFileLocation}" \
 	--release-files-only
 
-
-rm -r ${tmpReleaseFileLocation}
 '
+rm -r ${tmpReleaseFileLocation}
 
 wait() {
 	while [[ $(wget $2) != $3 ]]; do

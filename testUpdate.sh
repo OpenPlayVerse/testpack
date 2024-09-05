@@ -28,20 +28,24 @@ trap "error" ERR
 workingDir=$(pwd)
 packVersion=$(head -n 1 changelog.txt)
 changelog=$(< changelog.txt)
-currentGitBlob=""
+prepGitBlob=""
+mainGitBlob=""
+versionPrepID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 256; echo)
+versionID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 256; echo)
 
 ### update ###
 echo
 echo "### push prep to git ###"
+echo $versionPrepID > .versionID
 git add .
 git commit -m "v${packVersion}_prep"
 git push
-currentGitBlob=$(git rev-parse HEAD)
+prepGitBlob=$(git rev-parse HEAD)
 
 echo
 echo "### Create packwiz aliases ###"
 ./tools/createPackwizAliases.sh \
-	--pack-url ${packURL}/${currentGitBlob} \
+	--pack-url ${packURL}/${prepGitBlob} \
 	--input "files" \
 	--output "./packwiz" \
 	--list-file ".collectedFiles" \
@@ -54,10 +58,11 @@ cd ..
 
 echo
 echo "### push final to git ###"
+echo $versionID > .versionID
 git add .
 git commit -m "v${packVersion}"
 git push
-currentGitBlob=$(git rev-parse HEAD)
+mainGitBlob=$(git rev-parse HEAD)
 
 ### create multimc releases ###
 mkdir $tmpReleaseFileLocation
@@ -69,9 +74,11 @@ cd $workingDir
 
 cp -r multimc ${tmpReleaseFileLocation}/${packName}_$packVersion
 cd ${tmpReleaseFileLocation}/${packName}_$packVersion
-echo PreLaunchCommand="\$INST_JAVA" -jar packwiz-installer-bootstrap.jar -s client ${packURL}/${currentGitBlob}/packwiz/pack.toml >> instance.cfg
+echo PreLaunchCommand="\$INST_JAVA" -jar packwiz-installer-bootstrap.jar -s client ${packURL}/${mainGitBlob}/packwiz/pack.toml >> instance.cfg
 cd $workingDir
 
+
+: '
 ./tools/createGithubRelease.sh \
 	--upstream "${packAPIURL}/releases" \
 	--tag "$packVersion" \
@@ -84,7 +91,18 @@ cd $workingDir
 
 
 rm -r ${tmpReleaseFileLocation}
+'
 
+wait() {
+	while [[ $(wget $2) ~= $3 ]]; do
+		echo $1
+		sleep 30
+	done
+}
+wait "Prep mirror not updated yet. Wait another 30 seconds" ${packURL}/${prepGitBlob}/.versionID $versionPrepID
+wait "Main mirror not updated yet. Wait another 30 seconds" ${packURL}/${mainGitBlob}/.versionID $versionID
+
+echo TEST DONE
 
 : '
 echo

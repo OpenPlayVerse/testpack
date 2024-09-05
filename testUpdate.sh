@@ -94,6 +94,8 @@ echo $versionPrepID
 echo $versionID
 
 wait() {
+	echo sleep
+	wget -qO- $2
 	while [[ $(wget -qO- $2) != $3 ]]; do	
 		wget -qO- $2
 		echo $1

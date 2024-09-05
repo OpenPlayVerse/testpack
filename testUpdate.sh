@@ -96,6 +96,7 @@ echo $versionPrepID
 echo $versionID
 
 wait() {
+	curl -s $2
 	while [[ $(curl -s $2) != $3 ]]; do
 		echo $1
 		sleep 30

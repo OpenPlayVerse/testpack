@@ -97,9 +97,9 @@ echo $versionID
 
 wait() {
 	echo "sleep"
-	while [[ $(curl -s $2) != $3 ]]; do
+	while [[ $(wget -qO- $2) != $3 ]]; do
 		echo $2
-		curl -s $2
+		wget -qO- $2
 	
 		echo $1
 		sleep 30

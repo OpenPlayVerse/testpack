@@ -30,8 +30,8 @@ packVersion=$(head -n 1 changelog.txt)
 changelog=$(< changelog.txt)
 prepGitBlob=""
 mainGitBlob=""
-versionPrepID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 256; echo)
-versionID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 256; echo)
+versionPrepID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 25; echo)
+versionID=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 25; echo)
 
 ### update ###
 echo
@@ -92,8 +92,11 @@ cd $workingDir
 '
 rm -r ${tmpReleaseFileLocation}
 
+echo $versionPrepID
+echo $versionID
+
 wait() {
-	while [[ $(curl $2) != $3 ]]; do
+	while [[ $(curl -s $2) != $3 ]]; do
 		echo $1
 		sleep 30
 	done

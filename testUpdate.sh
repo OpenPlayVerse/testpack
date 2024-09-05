@@ -94,7 +94,7 @@ rm -r ${tmpReleaseFileLocation}
 '
 
 wait() {
-	while [[ $(wget $2) ~= $3 ]]; do
+	while [[ $(wget $2) != $3 ]]; do
 		echo $1
 		sleep 30
 	done

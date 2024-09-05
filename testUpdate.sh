@@ -102,8 +102,8 @@ wait() {
 		sleep 30
 	done
 }
-wait "Prep mirror not updated yet. Wait another 30 seconds" ${packURL}/${prepGitBlob}/.versionID $versionPrepID
-wait "Main mirror not updated yet. Wait another 30 seconds" ${packURL}/${branch}/.versionID $versionID
+wait "Prep repository not updated yet. Wait another 30 seconds" ${packURL}/${prepGitBlob}/.versionID $versionPrepID
+wait "Main repository not updated yet. Wait another 30 seconds" ${packURL}/${branch}/.versionID $versionID
 
 echo TEST DONE
 

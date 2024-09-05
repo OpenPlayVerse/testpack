@@ -78,7 +78,6 @@ echo PreLaunchCommand="\$INST_JAVA" -jar packwiz-installer-bootstrap.jar -s clie
 cd $workingDir
 
 
-: '
 ./tools/createGithubRelease.sh \
 	--upstream "${packAPIURL}/releases" \
 	--tag "$packVersion" \
@@ -89,18 +88,13 @@ cd $workingDir
 	--release-folder "${tmpReleaseFileLocation}" \
 	--release-files-only
 
-'
 rm -r ${tmpReleaseFileLocation}
 
 echo $versionPrepID
 echo $versionID
 
 wait() {
-	echo "sleep"
-	while [[ $(wget -qO- $2) != $3 ]]; do
-		echo $2
-		wget -qO- $2
-	
+	while [[ $(wget -qO- $2) != $3 ]]; do	
 		echo $1
 		sleep 30
 	done

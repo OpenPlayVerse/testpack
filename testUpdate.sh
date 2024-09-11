@@ -124,7 +124,7 @@ else
 		--token "$githubTokenPath" \
 		--release-folder "${tmpReleaseFileLocation}" \
 		--release-files-only
-end
+fi
 if [[ $noCleanup == 1 ]]; then
 	echo "Skipping release dir cleanup"
 else

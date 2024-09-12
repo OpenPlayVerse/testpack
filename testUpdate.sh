@@ -1,20 +1,5 @@
 #!/bin/bash
 
-### conf ###
-packName="testpack"
-serverID="40d42383"
-pterodactylURL="https://panel.openplayverse.net"
-packURL="https://github.com/OpenPlayVerse/testpack/raw/"
-packAPIURL="https://api.github.com/repos/OpenPlayVerse/testpack"
-branch="main"
-pterodactylTokenPath="/home/noname/.mmmtk/pterodactyl.token"
-githubTokenPath="/home/noname/.mmmtk/github.token"
-sshKeyPath="~/.ssh/nnh-g-50_test-nopasswd"
-sshTarget="test@192.168.4.150"
-sshArgs=""
-updateScriptArgs="-S"
-tmpReleaseFileLocation=".release"
-
 ### init ###
 # error detection
 set -e
@@ -23,6 +8,9 @@ error() {
 	exit 1
 }
 trap "error" ERR
+
+# set lua lib path
+export LUA_PATH="./tools/libs/?.lua;./libs/?.lua"
 
 # generate runtime vars
 workingDir=$(pwd)
@@ -37,15 +25,25 @@ skipMainRepoCheck=0
 noRelease=0
 noServerUpdate=0
 noCleanup=0
+confFile="pack.conf"
 
 # parse args
+help() {
+	echo "No help yet"
+	exit 0	
+}
 while [[ $# -gt 0 ]]; do
 	case $1 in
+		-c|--conf)
+			confFile=$2
+			shift
+			shift
+			;;
 		-C|--no-cleanup)
 			noCleanup=1
 			shift
 			;;
-		-S|--no-server-update)
+		-U|--no-server-update)
 			noServerUpdate=1
 			shift
 			;;
@@ -61,12 +59,20 @@ while [[ $# -gt 0 ]]; do
 			echo "v${version}"
 			shift
 			;;
+		-h|--help)
+			help
+			shift
+			;;
 		-*|--*)
-			echo "Unknown option $1"
+			echo "Unknown option '$1'"
+			echo "Try '--help' for help"
 			exit 1
 			;;
 	esac
 done
+
+# load conf
+. $confFile
 
 ### update ###
 echo
@@ -145,7 +151,6 @@ else
 	wait "$branch branch not updated yet. Wait another 30 seconds" ${packURL}/${branch}/.versionID $versionID
 fi
 
-: '
 if [[ $noServerUpdate == 1 ]]; then
 	echo "Skipping server update"
 else
@@ -154,13 +159,12 @@ else
 	./tools/updateServer.sh \
 	   --server-id $serverID \
 	   --pterodactyl-url $pterodactylURL \
-	   --pack-url "${packURL}/${branch}/packwiz/pack.toml" \
+	   --pack-url "${packURL}/${mainGitBlob}/packwiz/pack.toml" \
 	   --token $pterodactylTokenPath \
 	   --ssh-args="-i $sshKeyPath $sshTarget $sshArgs" \
 	   --update-script-args="$updateScriptArgs" \
 		--no-backup \
 	   $*
 fi
-'
 
 echo Done

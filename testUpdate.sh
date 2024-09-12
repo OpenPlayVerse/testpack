@@ -10,7 +10,7 @@ error() {
 trap "error" ERR
 
 # set lua lib path
-export LUA_PATH="./tools/libs/?.lua;./libs/?.lua"
+#export LUA_PATH="./tools/libs/?.lua;./libs/?.lua"
 
 # generate runtime vars
 workingDir=$(pwd)

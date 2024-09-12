@@ -9,8 +9,8 @@ error() {
 }
 trap "error" ERR
 
-# set lua lib path
-#export LUA_PATH="./tools/libs/?.lua;./libs/?.lua"
+# extend lua lib path to allocate shipped libraries
+export LUA_PATH=$(lua -e "print(package.path)")";./tools/libs/?.lua;./libs/?.lua"
 
 # generate runtime vars
 workingDir=$(pwd)

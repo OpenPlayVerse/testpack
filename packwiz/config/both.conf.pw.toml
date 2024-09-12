@@ -3,7 +3,7 @@ filename = "both.conf"
 side = "both"
 
 [download]
-url = "https://github.com/OpenPlayVerse/testpack/raw//6dc5092da0fd44ac6d3295250beb84b371cbc357/files/both/config/both.conf"
+url = "https://github.com/OpenPlayVerse/testpack/raw//bed5d5557eeada71393a218ee58d7a49580cf55a/files/both/config/both.conf"
 hash-format = "sha1"
 hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 					

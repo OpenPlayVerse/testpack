@@ -2,17 +2,17 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/both.conf.pw.toml"
-hash = "5d083ddcd72cf7b252b4693a49d2c69acc5b28faca1b5c18f1ad82a2686d0cfe"
+hash = "248182db4284af3397754ad66e8634da3e36a9523869608dfb7790f05fe76889"
 metafile = true
 
 [[files]]
 file = "config/client.conf.pw.toml"
-hash = "e67f0382baded5d8cbc35a5eae429468c98d6210901681917dbc68843768ae02"
+hash = "a9065caabc07de8ef5a93c5e3c0ce9c673652b30f69d2af198fb892a7b8591d9"
 metafile = true
 
 [[files]]
 file = "config/server.conf.pw.toml"
-hash = "0c89af51baf370f2438e494594f382ed98536705942254718d6bce5f5658c008"
+hash = "27f09d9a186991b09f14ce6aaecebc541b351b8c2e6d58d307f3b74109c00ae7"
 metafile = true
 
 [[files]]

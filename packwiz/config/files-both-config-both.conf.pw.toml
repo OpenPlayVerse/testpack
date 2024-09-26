@@ -1,9 +1,0 @@
-name = "both.conf"
-filename = "both.conf"
-side = "both"
-
-[download]
-url = "https://github.com/OpenPlayVerse/testpack/raw/d15648e92c3842252ee3cfa9e37162f9607ad1cc/files/both/config/both.conf"
-hash-format = "sha1"
-hash = "8b01ee30dd3a9af73739617cda5ca6b4c02843de"
-					

@@ -1,33 +1,18 @@
 hash-format = "sha256"
 
 [[files]]
-file = "config/files--both-config-both.conf.pw.toml"
-hash = "202f7c5dd88af459b8f838bef39bc2142dd64b738f5cd4495ff5c15cb68fdb35"
-metafile = true
-
-[[files]]
-file = "config/files--client-config-client.conf.pw.toml"
-hash = "82e8465f828a1b92a2ec079fe36c5ea2ebae05f33bbfd824c6a519c10554c869"
-metafile = true
-
-[[files]]
-file = "config/files--server-config-server.conf.pw.toml"
-hash = "1390fc5d00613c17cf69419813523ae2b5c62a81f6f7971b7950b8dca8599ec8"
-metafile = true
-
-[[files]]
 file = "config/files-both-config-both.conf.pw.toml"
-hash = "8a6d77da62bec17d3f9c7b146add4a06045598ca9cb7af2627fc0bffdad6e38b"
+hash = "f85060da56e0d960f3773b960197501156e43cc70e580cfe4f167598ff8172fb"
 metafile = true
 
 [[files]]
 file = "config/files-client-config-client.conf.pw.toml"
-hash = "fbefd0e451a7a58d5ef96bb7810c6450b105ba58595ac13200b832d56ed7eb47"
+hash = "8b3caff95283e491efb24c332af344d7b0c7284bace6a7aa0028e8653471c1ee"
 metafile = true
 
 [[files]]
 file = "config/files-server-config-server.conf.pw.toml"
-hash = "79d710d5daa9dd5c0a1c6b341c99636fc488b5f9bd6adf7e5fd6ca15edfb55f2"
+hash = "bc95111e9fc6a7d2b56074d0cc351877d0b18ed4effe232aec4d86ab47d5b9af"
 metafile = true
 
 [[files]]

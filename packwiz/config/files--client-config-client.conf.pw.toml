@@ -1,0 +1,9 @@
+name = "client.conf"
+filename = "client.conf"
+side = "client"
+
+[download]
+url = "blah/files//client/config/client.conf"
+hash-format = "sha1"
+hash = "f1e3f1c20e82baace0b38d864fc038ca7b900fb1"
+					

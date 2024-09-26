@@ -1,9 +1,0 @@
-name = "server.conf"
-filename = "server.conf"
-side = "server"
-
-[download]
-url = "https://github.com/OpenPlayVerse/testpack/raw/52f188c24bb97b79a7cdab981c58e1ab621621f8/files/server/config/server.conf"
-hash-format = "sha1"
-hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-					

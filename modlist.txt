@@ -1,4 +1,10 @@
+both.conf
+both.conf
+client.conf
+client.conf
 Create
 Nature's Compass
+server.conf
+server.conf
 WorldEdit
 Xaero's Minimap

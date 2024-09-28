@@ -8,3 +8,4 @@ server.conf
 server.conf
 WorldEdit
 Xaero's Minimap
+NonExistingMod

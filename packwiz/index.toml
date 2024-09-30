@@ -16,11 +16,6 @@ hash = "ea11677253893dd5343ec2552a4d537b72db2ccdfba7c2ec32cc3a69b3a95f21"
 metafile = true
 
 [[files]]
-file = "mods/create.pw.toml"
-hash = "8cd6e0ba62f3f5962a824170bbf52fd502cbfec5b861fb24757e8283dd351fd1"
-metafile = true
-
-[[files]]
 file = "mods/jei.pw.toml"
 hash = "de79e8615a4d06d01b575fa4ef255fe92e20a308c94769cb3d20612c79c69a9a"
 metafile = true

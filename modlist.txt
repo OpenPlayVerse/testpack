@@ -1,6 +1,5 @@
 both.conf
 client.conf
-Create
 Just Enough Items
 Nature's Compass
 server.conf

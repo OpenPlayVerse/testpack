@@ -1,0 +1,7 @@
+both.conf
+client.conf
+Just Enough Items
+Nature's Compass
+server.conf
+WorldEdit
+Xaero's Minimap

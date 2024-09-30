@@ -1,5 +1,6 @@
 both.conf
 client.conf
+Entity Culling
 Just Enough Items
 Nature's Compass
 server.conf

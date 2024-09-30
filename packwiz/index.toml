@@ -16,6 +16,11 @@ hash = "b13ff5b2c3168594b31aa25b7ea40eb34eeb332ec5688c5cbb4c2ae58d3a811b"
 metafile = true
 
 [[files]]
+file = "mods/entityculling.pw.toml"
+hash = "461b3289a997b8bf33e2f74e8f7391828c3a2660443fe1b714778677ca3d0d4c"
+metafile = true
+
+[[files]]
 file = "mods/jei.pw.toml"
 hash = "de79e8615a4d06d01b575fa4ef255fe92e20a308c94769cb3d20612c79c69a9a"
 metafile = true

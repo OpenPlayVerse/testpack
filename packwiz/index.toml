@@ -16,26 +16,26 @@ hash = "7c585cc508403adfcae48892d733fca315706ab0c169202301eb0cc60d20309e"
 metafile = true
 
 [[files]]
-file = "mods/entityculling.pw.toml"
-hash = "461b3289a997b8bf33e2f74e8f7391828c3a2660443fe1b714778677ca3d0d4c"
+file = "mods/fabric-api.pw.toml"
+hash = "86698b1faa9bf449eab492509239372302311092104be467108d7e05127e91f1"
+metafile = true
+
+[[files]]
+file = "mods/forge-config-api-port.pw.toml"
+hash = "129bb8b135edc60038f021b693f5b88a0067b722f326e0d6067112243774289b"
 metafile = true
 
 [[files]]
 file = "mods/jei.pw.toml"
-hash = "de79e8615a4d06d01b575fa4ef255fe92e20a308c94769cb3d20612c79c69a9a"
+hash = "fe2e5c00e7b0228a606b59488393cf1ebef2268e3344c0639c2e9ebc0113db06"
 metafile = true
 
 [[files]]
-file = "mods/natures-compass.pw.toml"
-hash = "a08c324ef885cd85a34ccaf5a97d6c06eea129fed35e9544b5b169a4e51c7417"
+file = "mods/regions-unexplored.pw.toml"
+hash = "9de1ee6b883e261423c0571044bf0cb1c07c5f580e528e1a84e93f0a7c4b082b"
 metafile = true
 
 [[files]]
-file = "mods/worldedit.pw.toml"
-hash = "b4d1af03603eba0a2fe8e9db1b0807154bbc16bf669dd084b7c96dded90cf213"
-metafile = true
-
-[[files]]
-file = "mods/xaeros-minimap.pw.toml"
-hash = "9f7c2bb3f55191c51966368ce952ee1d598d3c0ec97bc519a6909ad97e4b0fca"
+file = "mods/terrablender.pw.toml"
+hash = "99ae3a898041d9e7b6d2de55909287baacd6f71846e44f61f6a9420587fd7a09"
 metafile = true
